@@ -35,9 +35,11 @@ def getlink(dot, ids, id, type):
     }
 
     response = requests.post('https://public.funlink.io/api/url/tracking-url', headers=headers, json=json_data)
+    print(response.json())
     if response.status_code == 200:
         dtt = response.json()
-        
+        print(dtt["data_link"]['url'])
+        return(dtt["data_link"]['url'])
     else:
         return('cai dit me may')
 
@@ -78,7 +80,8 @@ def c():
         dt = response.json()
         type = dt["data_keyword"]["keyword_text"]
         ids = dt["data_keyword"]["id"]
-        
+        print(type)
+        print(ids)
     else:
         return jsonify({'error': 'failed'}), 400
     if type == '188Bet':
@@ -237,7 +240,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
 
-    if type == 'daga':
+    if type == 'đá gà trực tiếp':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -549,6 +552,8 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
     
+    else:
+        return jsonify({'error': 'unsupported'}), 400
 
 
     
