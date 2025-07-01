@@ -42,6 +42,8 @@ def c():
         dt = response.json()
         type = dt["data_keyword"]["keyword_text"]
         ids = dt["data_keyword"]["id"]
+        print(type)
+        print(ids)
     else:
         return jsonify({'error': 'failed'}), 400
     if type == '188Bet':
@@ -506,6 +508,7 @@ def c():
     response = requests.post('https://public.funlink.io/api/url/tracking-url', headers=headers, json=json_data)
     if response.status_code == 200:
         dtt = response.json()
+        print(dtt["data_link"]['url'])
         return jsonify({'success': dtt["data_link"]['url']}), 200
     else:
         return jsonify({'error': 'failed'}), 400
