@@ -398,7 +398,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
         
-    if type == 'trang cá cược' or type == 'cược bóng':
+    if type == 'trang cá cược' or type == 'cược bóng' or type == 'các trang các cược quốc tế' :
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -950,6 +950,9 @@ def c():
     
     else:
         return jsonify({'error': 'unsupported'}), 400
+    
+
+
 
 if __name__ == "__main__":
     
