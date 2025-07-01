@@ -3,6 +3,7 @@ import requests
 import re
 import random
 import time
+import os
 rod = random.randint(100000, 999999)
 rad = str(rod)
 
