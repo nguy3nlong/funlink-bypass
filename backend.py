@@ -502,14 +502,16 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
 
-    if type == 'm88lu':
+
+
+    if type == 'daga88':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
     'cache-control': 'max-age=0',
-    'origin': 'https://m88lu.io',
+    'origin': 'https://forgottenfields.co.uk',
     'priority': 'u=1, i',
-    'referer': 'https://m88lu.io/',
+    'referer': 'https://forgottenfields.co.uk/',
     'rid': rad,
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
 }
@@ -521,9 +523,9 @@ def c():
         'accept-language': 'en-US,en;q=0.9',
         'cache-control': 'max-age=0',
         'content-type': 'application/json',
-        'origin': 'https://m88lu.io',
+        'origin': 'https://forgottenfields.co.uk',
         'priority': 'u=1, i',
-        'referer': 'https://m88lu.io/',
+        'referer': 'https://forgottenfields.co.uk/',
         'rid': rad,
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
         }
@@ -536,9 +538,9 @@ def c():
        'os_name': 'skibidiOS',
        'os_version': '10000000',
        'is_cookies': True,
-       'href': 'https://m88lu.io/da-ga-m88/',
+       'href': 'https://forgottenfields.co.uk/gioi-thieu',
        'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-       'hostname': 'https://m88lu.io',
+       'hostname': 'https://forgottenfields.co.uk',
         }
             response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
             if response.status_code == 200:
@@ -556,8 +558,176 @@ def c():
     
     else:
         return jsonify({'error': 'unsupported'}), 400
+
+
+    if type == 'link s666 biz':
+        fheaders = {
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    'origin': 'https://cdef7.ru.com',
+    'priority': 'u=1, i',
+    'referer': 'https://cdef7.ru.com/',
+    'rid': rad,
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+}
+        fresponse = requests.options('https://public.funlink.io/api/code/ch', headers=fheaders)
+        if fresponse.status_code == 200:
+            time.sleep(60)
+            headers = {
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'cache-control': 'max-age=0',
+        'content-type': 'application/json',
+        'origin': 'https://cdef7.ru.com',
+        'priority': 'u=1, i',
+        'referer': 'https://cdef7.ru.com/',
+        'rid': rad,
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+        }
+            json_data = {
+       'screen': '1000 x 800',
+       'browser_name': 'Safari',
+       'browser_version': '100.0.0.0',
+       'browser_major_version': '137',
+       'is_mobile': False,
+       'os_name': 'skibidiOS',
+       'os_version': '10000000',
+       'is_cookies': True,
+       'href': 'https://cdef7.ru.com/nap-tien-s666/',
+       'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+       'hostname': 'https://cdef7.ru.com',
+        }
+            response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
+            if response.status_code == 200:
+                dat = response.json()
+                code = getlink(dat['code'], ids, id, type)
+                if code == 'cai dit me may':
+                    return jsonify({'error': 'failed'}), 400
+                else:
+                    return jsonify({'success': code}), 200         
+                
+            else:
+                return jsonify({'error': 'failed'}), 400
+        else:
+            return jsonify({'error': 'failed'}), 400
+    
+    else:
+        return jsonify({'error': 'unsupported'}), 400
+    
+
+    if type == 'ae888 co':
+        fheaders = {
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    'origin': 'https://ael1.com',
+    'priority': 'u=1, i',
+    'referer': 'https://ael1.com/',
+    'rid': rad,
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+}
+        fresponse = requests.options('https://public.funlink.io/api/code/ch', headers=fheaders)
+        if fresponse.status_code == 200:
+            time.sleep(60)
+            headers = {
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'cache-control': 'max-age=0',
+        'content-type': 'application/json',
+        'origin': 'https://ael1.com',
+        'priority': 'u=1, i',
+        'referer': 'https://ael1.com/',
+        'rid': rad,
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+        }
+            json_data = {
+       'screen': '1000 x 800',
+       'browser_name': 'Safari',
+       'browser_version': '100.0.0.0',
+       'browser_major_version': '137',
+       'is_mobile': False,
+       'os_name': 'skibidiOS',
+       'os_version': '10000000',
+       'is_cookies': True,
+       'href': 'https://ael1.com/rut-tien/',
+       'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+       'hostname': 'https://ael1.com',
+        }
+            response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
+            if response.status_code == 200:
+                dat = response.json()
+                code = getlink(dat['code'], ids, id, type)
+                if code == 'cai dit me may':
+                    return jsonify({'error': 'failed'}), 400
+                else:
+                    return jsonify({'success': code}), 200         
+                
+            else:
+                return jsonify({'error': 'failed'}), 400
+        else:
+            return jsonify({'error': 'failed'}), 400
+    
+    else:
+        return jsonify({'error': 'unsupported'}), 400
+
+
+    if type == 'keonhacai':
+        fheaders = {
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    'origin': 'https://aplaceintime.co.uk',
+    'priority': 'u=1, i',
+    'referer': 'https://aplaceintime.co.uk/',
+    'rid': rad,
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+}
+        fresponse = requests.options('https://public.funlink.io/api/code/ch', headers=fheaders)
+        if fresponse.status_code == 200:
+            time.sleep(60)
+            headers = {
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'cache-control': 'max-age=0',
+        'content-type': 'application/json',
+        'origin': 'https://aplaceintime.co.uk',
+        'priority': 'u=1, i',
+        'referer': 'https://aplaceintime.co.uk/',
+        'rid': rad,
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+        }
+            json_data = {
+       'screen': '1000 x 800',
+       'browser_name': 'Safari',
+       'browser_version': '100.0.0.0',
+       'browser_major_version': '137',
+       'is_mobile': False,
+       'os_name': 'skibidiOS',
+       'os_version': '10000000',
+       'is_cookies': True,
+       'href': 'https://aplaceintime.co.uk/keo-half-time-va-full-time.html',
+       'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+       'hostname': 'https://aplaceintime.co.uk',
+        }
+            response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
+            if response.status_code == 200:
+                dat = response.json()
+                code = getlink(dat['code'], ids, id, type)
+                if code == 'cai dit me may':
+                    return jsonify({'error': 'failed'}), 400
+                else:
+                    return jsonify({'success': code}), 200         
+                
+            else:
+                return jsonify({'error': 'failed'}), 400
+        else:
+            return jsonify({'error': 'failed'}), 400
+    
+    else:
+        return jsonify({'error': 'unsupported'}), 400
+
 if __name__ == "__main__":
     
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
-
