@@ -38,7 +38,6 @@ def getlink(dot, ids, id, type):
     print(response.json())
     if response.status_code == 200:
         dtt = response.json()
-        print(dtt["data_link"]['url'])
         return(dtt["data_link"]['url'])
     else:
         return('cai dit me may')
@@ -78,6 +77,8 @@ def c():
     response = requests.get('https://public.funlink.io/api/code/renew-key', params=params, headers=headers)
     if response.status_code == 200:
         dt = response.json()
+        if not dt:
+            return jsonify({'error': 'get the fuck out bitch'}), 400
         type = dt["data_keyword"]["keyword_text"]
         ids = dt["data_keyword"]["id"]
         print(type)
