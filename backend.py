@@ -557,7 +557,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
 
 
     if type == 'link s666 biz':
@@ -613,7 +613,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
     
 
     if type == 'ae888 co' or type == 'ae888':
@@ -669,7 +669,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
 
 
     if type == 'keonhacai':
@@ -725,7 +725,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
     
 
     if type == 'sunwin':
@@ -781,7 +781,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
     
 
     if type == 'nhà cái hello88 discount':
@@ -837,7 +837,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
     
 
     if type == 'm88 m88lu.io':
@@ -893,7 +893,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
     
 
     if type == 'az888 az888.wiki':
