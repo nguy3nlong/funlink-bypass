@@ -949,7 +949,7 @@ def c():
             return jsonify({'error': 'failed'}), 400
     
     else:
-        return jsonify({'error': 'unsupported'}), 400
+        return jsonify({'error': type}), 400
     
 
 
