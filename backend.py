@@ -138,7 +138,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
 
-    if type == 'w88':
+    if type == 'w88' or type == 'W88 vt':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -190,7 +190,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
     
-    if type == 'fun88' or type == 'fun88 kyc':
+    if type == 'fun88' or type == 'fun88 kyc' or type == 'FuN88':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -242,7 +242,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
 
-    if type == 'đá gà trực tiếp':
+    if type == 'đá gà trực tiếp' or type == 'đá gà 88':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -616,7 +616,7 @@ def c():
         return jsonify({'error': type}), 400
     
 
-    if type == 'ae888 co' or type == 'ae888':
+    if type == 'ae888 co' or type == 'ae888' or type == 'ae888 vision':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
