@@ -81,7 +81,7 @@ if type == '188Bet':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -130,7 +130,7 @@ elif type == 'w88':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -180,7 +180,7 @@ elif type == 'fun88':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -229,7 +229,7 @@ elif type == 'daga':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -278,7 +278,7 @@ if type == 'kubet':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -327,7 +327,7 @@ if type == '8xbet 8xbetvina.com':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -376,7 +376,7 @@ if type == 'trang cá cược':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -425,7 +425,7 @@ if type == 'lu88 vnco':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
@@ -474,7 +474,7 @@ if type == 'm88lu':
         response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
         if response.status_code == 200:
             dat = response.json()
-            print(f'your code: {dat['code']}')
+            print(f"your code: {dat['code']}")
         else:
             print(f'fail step 2: {response.status_code}')
     else:
