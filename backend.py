@@ -1173,6 +1173,62 @@ def c():
     
     else:
         return jsonify({'error': type}), 400
+
+
+    if type == '':
+        fheaders = {
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    'origin': 'https://www.jordanofficial.eu.com',
+    'priority': 'u=1, i',
+    'referer': 'https://www.jordanofficial.eu.com/',
+    'rid': rad,
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+}
+        fresponse = requests.options('https://public.funlink.io/api/code/ch', headers=fheaders)
+        if fresponse.status_code == 200:
+            time.sleep(60)
+            headers = {
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'cache-control': 'max-age=0',
+        'content-type': 'application/json',
+        'origin': 'https://www.jordanofficial.eu.com',
+        'priority': 'u=1, i',
+        'referer': 'https://www.jordanofficial.eu.com/',
+        'rid': rad,
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+        }
+            json_data = {
+       'screen': '1000 x 800',
+       'browser_name': 'Safari',
+       'browser_version': '100.0.0.0',
+       'browser_major_version': '137',
+       'is_mobile': False,
+       'os_name': 'skibidiOS',
+       'os_version': '10000000',
+       'is_cookies': True,
+       'href': 'https://www.jordanofficial.eu.com/tool-sunwin/',
+       'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
+       'hostname': 'https://www.jordanofficial.eu.com',
+        }
+            response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
+            if response.status_code == 200:
+                dat = response.json()
+                code = getlink(dat['code'], ids, id, type)
+                if code == 'cai dit me may':
+                    return jsonify({'error': 'failed'}), 400
+                else:
+                    return jsonify({'success': code}), 200         
+                
+            else:
+                return jsonify({'error': 'failed'}), 400
+        else:
+            return jsonify({'error': 'failed'}), 400
+    
+    else:
+        return jsonify({'error': type}), 400
     
 
 
