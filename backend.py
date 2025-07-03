@@ -242,7 +242,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
 
-    if type == 'đá gà trực tiếp' or type == 'đá gà 88':
+    if type == 'đá gà trực tiếp' or type == 'đá gà 88' or type == 'đá gà trực tiếp thomo':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -398,7 +398,7 @@ def c():
         else:
             return jsonify({'error': 'failed'}), 400
         
-    if type == 'trang cá cược' or type == 'cược bóng' or type == 'các trang các cược quốc tế' or type == 'trang cá độ bóng đá' or type == 'app cá cược bóng đá':
+    if type == 'trang cá cược' or type == 'cược bóng' or type == 'các trang các cược quốc tế' or type == 'trang cá độ bóng đá' or type == 'app cá cược bóng đá' or type == 'TRang cá cược bóng đá':
         fheaders = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
