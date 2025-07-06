@@ -1,15 +1,17 @@
-import requests
 import random
-import time
 import re
+import requests
+import time
+
+
 rod = random.randint(100000, 999999)
 rad = str(rod)
 
-surl = input('nhập link rút gọn: ')
+rurl = input('enter url: ')
 
-def funlink(rurl):
-    def getlink(dot, ids, id, type):
-        headers = {
+
+def getlink(dot, ids, id, type):
+    headers = {
     'accept': 'application/json',
     'accept-language': 'en-US,en;q=0.9',
     'content-type': 'application/json',
@@ -19,7 +21,8 @@ def funlink(rurl):
     'rid': rad,
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
     }
-        json_data = {
+
+    json_data = {
     'browser_name': 'skibidu',
     'browser_version': '99999',
     'os_name': 'SkibidiOS',
@@ -34,26 +37,25 @@ def funlink(rurl):
     'token': '',
     'keyword_id': ids,
     }
-        response = requests.post('https://public.funlink.io/api/url/tracking-url', headers=headers, json=json_data)
-        if response.status_code == 200:
-            dtt = response.json()
-            return(dtt["data_link"]['url'])
-        else:
-            return('cai dit me may')
+
+    response = requests.post('https://public.funlink.io/api/url/tracking-url', headers=headers, json=json_data)
+
+    if response.status_code == 200:
+        dtt = response.json()
+        return(dtt["data_link"]['url'])
+    else:
+        return('cai dit me may')
 
 
 
 
 
-
-
-    if not rurl:
-        return('url missing')
+def c(rurl):
     urlmatch = re.search(r"funlink\.io/([A-Za-z0-9]+)", rurl)
     if urlmatch:
         id = urlmatch.group(1)
     if not urlmatch:
-        return('not match url')
+        print('failed to fetch id, check your url again')
     headers = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -74,14 +76,14 @@ def funlink(rurl):
     if response.status_code == 200:
         dt = response.json()
         if not dt:
-            return('failed')
+            print('no response for step 1')
         urls = dt["data_keyword"]["url_destination"]
         ids = dt["data_keyword"]["id"]
         type = dt["data_keyword"]["keyword_text"]
         aurls = f'{urls}404'
      
     else:
-        return('failed')
+        print('failed, get support')
  
     fheaders = {
     'accept': '*/*',
@@ -126,16 +128,14 @@ def funlink(rurl):
             dat = response.json()
             code = getlink(dat['code'], ids, id, type)
             if code == 'cai dit me may':
-                return('failed')
+                print('failed, contact support')
             else:
-                return(code)
+                print(f'Code: {code}')
                 
         else:
-            return('failed')
+            print('failed')
     else:
-        return('failed')
-        
+        print('failed')
 
 
-link = funlink(surl)
-print(link)
+c(rurl)
