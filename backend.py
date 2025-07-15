@@ -1,141 +1,103 @@
 from flask import Flask, request, send_from_directory, jsonify
 import requests
 import re
-import random
-import time
-import os
-rod = random.randint(100000, 999999)
-rad = str(rod)
-
-def getlink(dot, ids, id, type):
-    headers = {
-    'accept': 'application/json',
-    'accept-language': 'en-US,en;q=0.9',
-    'content-type': 'application/json',
-    'origin': 'https://funlink.io',
-    'priority': 'u=1, i',
-    'referer': 'https://funlink.io/',
-    'rid': rad,
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-    }
-
-    json_data = {
-    'browser_name': 'skibidu',
-    'browser_version': '99999',
-    'os_name': 'SkibidiOS',
-    'os_version': '10000',
-    'os_version_name': '1000',
-    'keyword_answer': dot,
-    'link_shorten_id': id,
-    'keyword': type,
-    'ip': '',
-    'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-    'device_name': 'desktop',
-    'token': '',
-    'keyword_id': ids,
-    }
-
-    response = requests.post('https://public.funlink.io/api/url/tracking-url', headers=headers, json=json_data)
-
-    if response.status_code == 200:
-        dtt = response.json()
-        return(dtt["data_link"]['url'])
-    else:
-        return('cai dit me may')
-
 
 app = Flask(__name__)
 
-@app.route('/ch', methods=['POST'])
-def c():
+
+domains = [
+    "https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betdi.com/cuoc-thang-ap-dao-la-gi&loai_traffic=https://v9betdi.com/&clk=1000",
+    "https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betho.com/ca-cuoc-bong-ro-ao&loai_traffic=https://v9betho.com/&clk=1000",
+    "https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://v9betxa.com/cach-choi-craps&loai_traffic=https://v9betxa.com/&clk=1000",
+]
+
+success = False
+@app.route('/bypass', methods=['POST'])
+def k():
     json = request.get_json()
     if not json:
         return jsonify({'error': 'get the fuck out bitch'}), 400
-    rurl = json['url']
-    if not rurl:
+    type = json['type']
+    if not type:
         return jsonify({'error': 'get the fuck out bitch'}), 400
-    urlmatch = re.search(r"funlink\.io/([A-Za-z0-9]+)", rurl)
-    if urlmatch:
-        id = urlmatch.group(1)
-    if not urlmatch:
-        return jsonify({'error': 'get the fuck out bitch'}), 400
-    headers = {
-    'accept': '*/*',
-    'accept-language': 'en-US,en;q=0.9',
-    'origin': 'https://funlink.io',
-    'priority': 'u=1, i',
-    'referer': 'https://funlink.io/',
-    'rid': rad,
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-site',
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-    }
-    params = {
-    'ignoreId': rad,
-    'id': id,
-}
-    response = requests.get('https://public.funlink.io/api/code/renew-key', params=params, headers=headers)
-    if response.status_code == 200:
-        dt = response.json()
-        if not dt:
-            return jsonify({'error': 'get the fuck out bitch'}), 400
-        urls = dt["data_keyword"]["url_destination"]
-        ids = dt["data_keyword"]["id"]
-        type = dt["data_keyword"]["keyword_text"]
-        aurls = f'{urls}404'
-     
-    else:
-        return jsonify({'error': 'failed'}), 400
- 
-    fheaders = {
-    'accept': '*/*',
-    'accept-language': 'en-US,en;q=0.9',
-    'cache-control': 'max-age=0',
-    'origin': urls,
-    'priority': 'u=1, i',
-    'referer': urls,
-    'rid': rad,
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-}
-    fresponse = requests.options('https://public.funlink.io/api/code/ch', headers=fheaders)
-    if fresponse.status_code == 200:
-        time.sleep(60)
-        headers = {
-        'accept': '*/*',
-        'accept-language': 'en-US,en;q=0.9',
-        'cache-control': 'max-age=0',
-        'content-type': 'application/json',
-        'origin': urls,
-        'priority': 'u=1, i',
-        'referer': urls,
-        'rid': rad,
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-        }
-        json_data = {
-       'screen': '1000 x 800',
-       'browser_name': 'Safari',
-       'browser_version': '100.0.0.0',
-       'browser_major_version': '137',
-       'is_mobile': False,
-       'os_name': 'skibidiOS',
-       'os_version': '10000000',
-       'is_cookies': True,
-       'href': aurls,
-       'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-       'hostname': urls,
-        }
-        response = requests.post('https://public.funlink.io/api/code/code', headers=headers, json=json_data)
-
-        if response.status_code == 200:
-            dat = response.json()
-            code = getlink(dat['code'], ids, id, type)
-            if code == 'cai dit me may':
-                return jsonify({'error': 'failed'}), 400
-            else:
-                return jsonify({'success': code}), 200
-                
+    
+    if type == 'm88':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://bet88ec.com/cach-danh-bai-sam-loc&loai_traffic=https://bet88ec.com/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
         else:
-            return jsonify({'error': 'failed'}), 400
-    else:
-        return jsonify({'error': 'failed'}), 400
+            return jsonify({'error': 'cannot get code'}), 400
+
+    if type == 'fb88':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://fb88mg.com/ty-le-cuoc-hong-kong-la-gi&loai_traffic=https://fb88mg.com/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
+        else:
+            return jsonify({'error': 'cannot get code'}), 400
+
+    if type == '188bet':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrailamnhe&url=https://88betag.com/cach-choi-game-bai-pok-deng&loai_traffic=https://88betag.com/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
+        else:
+            return jsonify({'error': 'cannot get code'}), 400
+
+    if type == 'w88':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://188.166.185.213/tim-hieu-khai-niem-3-bet-trong-poker-la-gi&loai_traffic=https://188.166.185.213/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
+        else:
+            return jsonify({'error': 'cannot get code'}), 400
+
+    if type == 'v9bet':
+        success = False  
+        for domain in domains:
+            try:
+                response = requests.post(domain)
+                if response.ok:
+                    html = response.text
+                    match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+                    if match:
+                        code = match.group(1)
+                        return jsonify({'code': code}), 200
+                    else:
+                        print(response.json())
+                        continue
+            except requests.RequestException as e:
+                
+                continue
+
+        
+        return jsonify({'error': 'cannot get code'}), 400
+
+    if type == 'bk8':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=taodeptrai&url=https://bk8xo.com/lo-ba-cang-la-gi&loai_traffic=https://bk8xo.com/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
+        else:
+            return jsonify({'error': 'cannot get code'}), 400
+
+    if type == 'vn88':
+        response = requests.post(f'https://traffic-user.net/GET_MA.php?codexn=deobiet&url=https://vn88ie.com/cach-choi-mega-6-45&loai_traffic=https://vn88ie.com/&clk=1000')
+        html = response.text
+        match = re.search(r'<span id="layma_me_vuatraffic"[^>]*>\s*(\d+)\s*</span>', html)
+        if match:
+            code = match.group(1)
+            return jsonify({'code': code}), 200
+        else:
+            return jsonify({'error': 'cannot get code'}), 400
